@@ -233,7 +233,7 @@ class _AiiHealthContactTracingMedicalHistoryState
                   } else if (inputRight == 'BMI') {
                     setState(() {
                       print("HI");
-                      if (weight != null && heightCm != null) {
+                      if (weight != null && heightCm != null && weight.length>0 && heightCm.length>0) {
                         bmi = double.parse(weight) /
                             pow(((double.parse(heightCm)) * 0.01), 2);
                         print(bmi);
