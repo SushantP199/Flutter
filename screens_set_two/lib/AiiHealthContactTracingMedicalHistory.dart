@@ -150,6 +150,22 @@ class _AiiHealthContactTracingMedicalHistoryState
               child: TextField(
                 onChanged: (textValue) {
                   saveInputData(inputData: inputLeft, textValue: textValue);
+                  if (inputLeft == 'Height(Cm)') {
+                    setState(() {
+                      if (weight != null &&
+                          heightCm != null &&
+                          weight.length > 0 &&
+                          heightCm.length > 0) {
+                        bmi = double.parse(weight) /
+                            pow(((double.parse(heightCm)) * 0.01), 2);
+                        print(bmi);
+                      } else {
+                        bmi = 0.0;
+                      }
+                      saveInputData(
+                          inputData: 'BMI', textValue: bmi.toString());
+                    });
+                  }
                 },
                 keyboardType:
                     (numberFieldL) ? TextInputType.number : TextInputType.text,
@@ -201,6 +217,24 @@ class _AiiHealthContactTracingMedicalHistoryState
                 textAlign: TextAlign.center,
                 onChanged: (textValue) {
                   saveInputData(inputData: inputRight, textValue: textValue);
+                  if (
+                      inputRight == 'Weight(Kg)') {
+                    setState(() {
+                      if (weight != null &&
+                          heightCm != null &&
+                          weight.length > 0 &&
+                          heightCm.length > 0) {
+                        bmi = double.parse(weight) /
+                            pow(((double.parse(heightCm)) * 0.01), 2);
+                        print(bmi);
+                      } else {
+                        bmi = 0.0;
+                      }
+                      saveInputData(
+                          inputData: 'BMI', textValue: bmi.toString());
+                    });
+                  }
+                  ;
                 },
                 controller: (inputRight == 'Date of Birth' && _dateTime != null)
                     ? TextEditingController(text: dob)
@@ -213,6 +247,7 @@ class _AiiHealthContactTracingMedicalHistoryState
                                 : (inputRight == 'Biceps')
                                     ? TextEditingController(text: biceps)
                                     : TextEditingController(),
+                enabled: (inputRight == 'BMI') ? false : true,
                 onTap: () {
                   if (inputRight == 'Date of Birth') {
                     print("DatePicker");
@@ -230,19 +265,6 @@ class _AiiHealthContactTracingMedicalHistoryState
                         saveInputData(inputData: inputRight, textValue: dob);
                       });
                     });
-                  } else if (inputRight == 'BMI') {
-                    setState(() {
-                      print("HI");
-                      if (weight != null && heightCm != null && weight.length>0 && heightCm.length>0) {
-                        bmi = double.parse(weight) /
-                            pow(((double.parse(heightCm)) * 0.01), 2);
-                        print(bmi);
-                      } else {
-                        bmi = 0.0;
-                      }
-                      saveInputData(
-                          inputData: inputRight, textValue: bmi.toString());
-                    });
                   }
                 },
                 keyboardType:
@@ -252,11 +274,19 @@ class _AiiHealthContactTracingMedicalHistoryState
                   contentPadding: EdgeInsets.symmetric(horizontal: 15.0),
                   filled: true,
                   fillColor: Color.fromRGBO(99, 203, 218, 1.0),
-                  hintText: '$inputRight',
+                  hintText: (inputRight == 'BMI')
+                      ? (bmi != null) ? bmi.toString() : 'BMI'
+                      : '$inputRight',
                   hintStyle: TextStyle(
                     fontFamily: 'Open Sans',
                     fontSize: 13.0,
                     color: Colors.white,
+                  ),
+                  disabledBorder:  OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10.0),
+                    borderSide: BorderSide(
+                      color: Color.fromRGBO(244, 246, 249, 1.0),
+                    ),
                   ),
                   enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10.0),
