@@ -90,12 +90,14 @@ class _AiiHealthContactTracingMedicalHistoryState
       heightCm,
       weight,
       bloodGroup,
-      bmi,
+      //bmi,
       chest,
-      height2,
+      height,
       waist,
       biceps,
       otherInfo;
+
+  double bmi;
 
   void saveInputData({String inputData, String textValue}) {
     if (inputData == 'Name') {
@@ -122,7 +124,7 @@ class _AiiHealthContactTracingMedicalHistoryState
       chest = textValue;
     }
     if (inputData == 'Height') {
-      height2 = textValue; //conflict height
+      height = textValue; //conflict height
     }
     if (inputData == 'Waist') {
       waist = textValue;
@@ -203,8 +205,14 @@ class _AiiHealthContactTracingMedicalHistoryState
                 controller: (inputRight == 'Date of Birth' && _dateTime != null)
                     ? TextEditingController(text: dob)
                     : (inputRight == 'BMI' && bmi != null)
-                        ? TextEditingController(text: bmi.toString())
-                        : TextEditingController(text: ''),
+                        ? TextEditingController(text: bmi.toStringAsFixed(2))
+                        : (inputRight == 'Weight(Kg)')
+                            ? TextEditingController(text: weight)
+                            : (inputRight == 'Height')
+                                ? TextEditingController(text: height)
+                                : (inputRight == 'Biceps')
+                                    ? TextEditingController(text: biceps)
+                                    : TextEditingController(),
                 onTap: () {
                   if (inputRight == 'Date of Birth') {
                     print("DatePicker");
@@ -222,17 +230,18 @@ class _AiiHealthContactTracingMedicalHistoryState
                         saveInputData(inputData: inputRight, textValue: dob);
                       });
                     });
-                  }
-                  if (inputRight == 'BMI') {
+                  } else if (inputRight == 'BMI') {
                     setState(() {
+                      print("HI");
                       if (weight != null && heightCm != null) {
                         bmi = double.parse(weight) /
                             pow(((double.parse(heightCm)) * 0.01), 2);
                         print(bmi);
                       } else {
-                        bmi = '0.0';
+                        bmi = 0.0;
                       }
-                      saveInputData(inputData: inputRight, textValue: bmi);
+                      saveInputData(
+                          inputData: inputRight, textValue: bmi.toString());
                     });
                   }
                 },
