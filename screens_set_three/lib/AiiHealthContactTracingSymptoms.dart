@@ -173,7 +173,7 @@ class _AiiHealthContactTracingSymptomsState
                               Align(
                                 alignment: Alignment.centerLeft,
                                 child: Text(
-                                  'Respiratory rate (Breaths per minute)',
+                                  'Respiratory rate (breaths per minute)',
                                   style: TextStyle(
                                     fontFamily: 'Open Sans',
                                     fontSize: 13.0,
@@ -183,26 +183,66 @@ class _AiiHealthContactTracingSymptomsState
                               SizedBox(height: 5.0,),
                               Align(
                                 alignment: Alignment.centerLeft,
-                                child: Text(
-                                  'NA',
-                                  style: TextStyle(
-                                    fontFamily: 'Open Sans',
-                                    fontSize: 13.0,
+                                child:Container(
+                                  margin: EdgeInsets.only(right: 5.0),
+                                  width: 120.0,
+                                  height: 25.0
+                                  ,
+                                child: TextField(
+                                  onChanged: (textValue) {
+                                   // symptoms["Respiratory rate (breaths per minute)"]=textValue;
+                                  },
+                                  textAlign: TextAlign.left,
+                                  cursorWidth: 1.5,
+                                  cursorColor: Colors.black,
+                                  decoration: InputDecoration(
+                                    suffixStyle: TextStyle(
+                                      fontFamily: 'Open Sans',
+                                      fontSize: 13.0,
+                                      color: Colors.white,
+                                    ),
+                                    contentPadding: EdgeInsets.symmetric(horizontal: 5.0),
+                                    filled: true,
+                                    hintText: 'NA',
+                                    hintStyle: TextStyle(
+                                      fontFamily: 'Open Sans',
+                                      fontSize: 13.0,
+                                      color: Colors.black,
+                                    ),
+                                    enabledBorder: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(10.0),
+                                      borderSide: BorderSide(
+                                        color: Color.fromRGBO(244, 246, 249, 1.0),
+                                      ),
+                                    ),
+                                    focusedBorder: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(10.0),
+                                      borderSide: BorderSide(
+                                        color: Color.fromRGBO(244, 246, 249, 1.0),
+                                      ),
+                                    ),
+                                    focusedErrorBorder: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(10.0),
+                                      borderSide: BorderSide(
+                                        color: Colors.redAccent,
+                                      ),
+                                    ),
                                   ),
-                                ),
+                                  autofocus: false,
+                                ),),
                               ),
                               ],
                             ),
                           ),
                           Container(
-                          margin: EdgeInsets.symmetric(vertical: 3.0),
+                          margin: EdgeInsets.only(top: 2.5, bottom: 3.0),
                           padding: EdgeInsets.all(0.0),
                           child: Column(
                             children: <Widget>[
                               Align(
                                 alignment: Alignment.centerLeft,
                                 child: Text(
-                                  'Pulse rate (Hearthbeats per minute)',
+                                  'Pulse rate (Heartbeats per minute)',
                                   style: TextStyle(
                                     fontFamily: 'Open Sans',
                                     fontSize: 13.0,
@@ -212,19 +252,59 @@ class _AiiHealthContactTracingSymptomsState
                               SizedBox(height: 5.0,),
                               Align(
                                 alignment: Alignment.centerLeft,
-                                child: Text(
-                                  'NA',
-                                  style: TextStyle(
-                                    fontFamily: 'Open Sans',
-                                    fontSize: 13.0,
+                                child:Container(
+                                  margin: EdgeInsets.only(right: 5.0),
+                                  width: 120.0,
+                                  height: 25.0
+                                  ,
+                                child: TextField(
+                                  onChanged: (textValue) {
+                                   // symptoms["Pulse rate (hearthbeats per minute)"]=textValue;
+                                  },
+                                  textAlign: TextAlign.left,
+                                  cursorWidth: 1.5,
+                                  cursorColor: Colors.black,
+                                  decoration: InputDecoration(
+                                    suffixStyle: TextStyle(
+                                      fontFamily: 'Open Sans',
+                                      fontSize: 13.0,
+                                      color: Colors.white,
+                                    ),
+                                    contentPadding: EdgeInsets.symmetric(horizontal: 5.0),
+                                    filled: true,
+                                    hintText: 'NA',
+                                    hintStyle: TextStyle(
+                                      fontFamily: 'Open Sans',
+                                      fontSize: 13.0,
+                                      color: Colors.black,
+                                    ),
+                                    enabledBorder: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(10.0),
+                                      borderSide: BorderSide(
+                                        color: Color.fromRGBO(244, 246, 249, 1.0),
+                                      ),
+                                    ),
+                                    focusedBorder: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(10.0),
+                                      borderSide: BorderSide(
+                                        color: Color.fromRGBO(244, 246, 249, 1.0),
+                                      ),
+                                    ),
+                                    focusedErrorBorder: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(10.0),
+                                      borderSide: BorderSide(
+                                        color: Colors.redAccent,
+                                      ),
+                                    ),
                                   ),
-                                ),
+                                  autofocus: false,
+                                ),),
                               ),
                               ],
                             ),
                           ),
                           Container(
-                          margin: EdgeInsets.symmetric(vertical: 3.0),
+                          margin: EdgeInsets.only(top: 2.5, bottom: 3.0),
                           padding: EdgeInsets.all(0.0),
                           child: Column(
                             children: <Widget>[
@@ -241,17 +321,144 @@ class _AiiHealthContactTracingSymptomsState
                               SizedBox(height: 5.0,),
                               Align(
                                 alignment: Alignment.centerLeft,
-                                child: Text(
-                                  'NA',
-                                  style: TextStyle(
-                                    fontFamily: 'Open Sans',
-                                    fontSize: 13.0,
+                                child:Container(
+                                  margin: EdgeInsets.only(right: 5.0),
+                                  width: 120.0,
+                                  height: 25.0
+                                  ,
+                                child: TextField(
+                                  onChanged: (textValue) {
+                                   // symptoms["Blood pressure (high or low)"]=textValue;
+                                  },
+                                  textAlign: TextAlign.left,
+                                  cursorWidth: 1.5,
+                                  cursorColor: Colors.black,
+                                  decoration: InputDecoration(
+                                    suffixStyle: TextStyle(
+                                      fontFamily: 'Open Sans',
+                                      fontSize: 13.0,
+                                      color: Colors.white,
+                                    ),
+                                    contentPadding: EdgeInsets.symmetric(horizontal: 5.0),
+                                    filled: true,
+                                    hintText: 'NA',
+                                    hintStyle: TextStyle(
+                                      fontFamily: 'Open Sans',
+                                      fontSize: 13.0,
+                                      color: Colors.black,
+                                    ),
+                                    enabledBorder: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(10.0),
+                                      borderSide: BorderSide(
+                                        color: Color.fromRGBO(244, 246, 249, 1.0),
+                                      ),
+                                    ),
+                                    focusedBorder: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(10.0),
+                                      borderSide: BorderSide(
+                                        color: Color.fromRGBO(244, 246, 249, 1.0),
+                                      ),
+                                    ),
+                                    focusedErrorBorder: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(10.0),
+                                      borderSide: BorderSide(
+                                        color: Colors.redAccent,
+                                      ),
+                                    ),
                                   ),
-                                ),
+                                  autofocus: false,
+                                ),),
                               ),
                               ],
                             ),
                           ),
+                        // Container(
+                        //   margin: EdgeInsets.only(top: 2.5, bottom: 3.0),
+                        //   padding: EdgeInsets.all(0.0),
+                        //   child: Column(
+                        //     children: <Widget>[
+                        //       Align(
+                        //         alignment: Alignment.centerLeft,
+                        //         child: Text(
+                        //           'Respiratory rate (Breaths per minute)',
+                        //           style: TextStyle(
+                        //             fontFamily: 'Open Sans',
+                        //             fontSize: 13.0,
+                        //           ),
+                        //         ),
+                        //       ),
+                        //       SizedBox(height: 5.0,),
+                        //       Align(
+                        //         alignment: Alignment.centerLeft,
+                        //         child: Text(
+                        //           'NA',
+                        //           style: TextStyle(
+                        //             fontFamily: 'Open Sans',
+                        //             fontSize: 13.0,
+                        //           ),
+                        //         ),
+                        //       ),
+                        //       ],
+                        //     ),
+                        //   ),
+                        //   Container(
+                        //   margin: EdgeInsets.symmetric(vertical: 3.0),
+                        //   padding: EdgeInsets.all(0.0),
+                        //   child: Column(
+                        //     children: <Widget>[
+                        //       Align(
+                        //         alignment: Alignment.centerLeft,
+                        //         child: Text(
+                        //           'Pulse rate (Hearthbeats per minute)',
+                        //           style: TextStyle(
+                        //             fontFamily: 'Open Sans',
+                        //             fontSize: 13.0,
+                        //           ),
+                        //         ),
+                        //       ),
+                        //       SizedBox(height: 5.0,),
+                        //       Align(
+                        //         alignment: Alignment.centerLeft,
+                        //         child: Text(
+                        //           'NA',
+                        //           style: TextStyle(
+                        //             fontFamily: 'Open Sans',
+                        //             fontSize: 13.0,
+                        //           ),
+                        //         ),
+                        //       ),
+                        //       ],
+                        //     ),
+                        //   ),
+                        //   Container(
+                        //   margin: EdgeInsets.symmetric(vertical: 3.0),
+                        //   padding: EdgeInsets.all(0.0),
+                        //   child: Column(
+                        //     children: <Widget>[
+                        //       Align(
+                        //         alignment: Alignment.centerLeft,
+                        //         child: Text(
+                        //           'Blood pressure (High or low)',
+                        //           style: TextStyle(
+                        //             fontFamily: 'Open Sans',
+                        //             fontSize: 13.0,
+                        //           ),
+                        //         ),
+                        //       ),
+                        //       SizedBox(height: 5.0,),
+                        //       Align(
+                        //         alignment: Alignment.centerLeft,
+                        //         child: Text(
+                        //           'NA',
+                        //           style: TextStyle(
+                        //             fontFamily: 'Open Sans',
+                        //             fontSize: 13.0,
+                        //           ),
+                        //         ),
+                        //       ),
+                        //       ],
+                        //     ),
+                        //   ),
                         // symptomRow(question: 'Respiratory rate (Breaths per minute)', queryNumber: 8),
                         // symptomRow(question: 'Pulse rate (Hearthbeats per minute)', queryNumber: 9),
                         // symptomRow(question: 'Blood pressure', queryNumber: 10),

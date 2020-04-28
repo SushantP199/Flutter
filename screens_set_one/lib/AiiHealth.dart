@@ -44,6 +44,17 @@ class _AiiHealthState extends State<AiiHealth> {
               ),
             ),
           ),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(25.0, 60.0, 0.0, 0.0),
+            child: Text(
+              (name1=='Activity') ? '(coming soon)' : '',
+              style: TextStyle(
+                fontFamily: 'Open Sans',
+                color: Colors.white,
+                fontSize: 11.0,
+              ),
+            ),
+          ),
         ],
       ),
     );
@@ -83,6 +94,17 @@ class _AiiHealthState extends State<AiiHealth> {
                 color: Colors.white,
                 fontSize: 13.0,
                 fontWeight: FontWeight.w700,
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(25.0, 60.0, 0.0, 0.0),
+            child: Text(
+              (name2=='Health Devices' || name2=='Fitness Progress') ? '(coming soon)' : '',
+              style: TextStyle(
+                fontFamily: 'Open Sans',
+                color: Colors.white,
+                fontSize: 11.0,
               ),
             ),
           ),

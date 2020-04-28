@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter/src/material/date_picker.dart';
+//import 'package:flutter/src/material/date_picker.dart';
 import 'dart:math';
 
 class AiiHealthContactTracingMedicalHistory extends StatefulWidget {
@@ -157,7 +157,7 @@ class _AiiHealthContactTracingMedicalHistoryState
                           weight.length > 0 &&
                           heightCm.length > 0) {
                         bmi = double.parse(weight) /
-                            pow(((double.parse(heightCm)) * 0.01), 2);
+                            (pow(((double.parse(heightCm)) * 0.01), 2));
                         print(bmi);
                       } else {
                         bmi = 0.0;
@@ -167,6 +167,23 @@ class _AiiHealthContactTracingMedicalHistoryState
                     });
                   }
                 },
+                controller: (inputLeft == 'Name')
+                    ? TextEditingController(text: name)
+                    : (inputLeft == 'Height(Cm)')
+                        ? (heightCm != null)
+                            ? TextEditingController.fromValue(TextEditingValue(
+                                text: heightCm,
+                                selection: TextSelection.collapsed(
+                                    offset: heightCm.length)))
+                            : TextEditingController(text: heightCm)
+                        : (inputLeft == 'Blood Group')
+                            ? TextEditingController(text: bloodGroup)
+                            : (inputLeft == 'Chest')
+                                ? TextEditingController(text: chest)
+                                : (inputLeft == 'Waist')
+                                    ? TextEditingController(text: waist)
+                                    : TextEditingController(),
+                enabled: (inputLeft == 'Name') ? false : true,
                 keyboardType:
                     (numberFieldL) ? TextInputType.number : TextInputType.text,
                 textAlign: TextAlign.center,
@@ -187,6 +204,12 @@ class _AiiHealthContactTracingMedicalHistoryState
                     fontFamily: 'Open Sans',
                     fontSize: 13.0,
                     color: Colors.white,
+                  ),
+                  disabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10.0),
+                    borderSide: BorderSide(
+                      color: Color.fromRGBO(244, 246, 249, 1.0),
+                    ),
                   ),
                   enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10.0),
@@ -217,8 +240,7 @@ class _AiiHealthContactTracingMedicalHistoryState
                 textAlign: TextAlign.center,
                 onChanged: (textValue) {
                   saveInputData(inputData: inputRight, textValue: textValue);
-                  if (
-                      inputRight == 'Weight(Kg)') {
+                  if (inputRight == 'Weight(Kg)') {
                     setState(() {
                       if (weight != null &&
                           heightCm != null &&
@@ -241,7 +263,13 @@ class _AiiHealthContactTracingMedicalHistoryState
                     : (inputRight == 'BMI' && bmi != null)
                         ? TextEditingController(text: bmi.toStringAsFixed(2))
                         : (inputRight == 'Weight(Kg)')
-                            ? TextEditingController(text: weight)
+                            ? (weight != null)
+                                ? TextEditingController.fromValue(
+                                    TextEditingValue(
+                                        text: weight,
+                                        selection: TextSelection.collapsed(
+                                            offset: weight.length)))
+                                : TextEditingController(text: weight)
                             : (inputRight == 'Height')
                                 ? TextEditingController(text: height)
                                 : (inputRight == 'Biceps')
@@ -282,7 +310,7 @@ class _AiiHealthContactTracingMedicalHistoryState
                     fontSize: 13.0,
                     color: Colors.white,
                   ),
-                  disabledBorder:  OutlineInputBorder(
+                  disabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10.0),
                     borderSide: BorderSide(
                       color: Color.fromRGBO(244, 246, 249, 1.0),
