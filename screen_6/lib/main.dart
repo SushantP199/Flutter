@@ -50,7 +50,7 @@ class _ScreenSixState extends State<ScreenSix> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.fromLTRB(35.0, 50.0, 0.0, 0.0),
+                padding: const EdgeInsets.fromLTRB(35.0, 40.0, 0.0, 0.0),
                 child: Text(
                   '$name1',
                   style: TextStyle(
@@ -58,6 +58,18 @@ class _ScreenSixState extends State<ScreenSix> {
                     color: Colors.white,
                     fontSize: 13.0,
                     fontWeight: FontWeight.w700,
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(35.0, 55.0, 0.0, 0.0),
+                child: Text(
+                  '(coming soon)',
+                  style: TextStyle(
+                    fontFamily: 'Open Sans',
+                    color: Colors.white,
+                    fontSize: 11.0,
+                    //fontWeight: FontWeight.w500,
                   ),
                 ),
               ),
@@ -90,7 +102,7 @@ class _ScreenSixState extends State<ScreenSix> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.fromLTRB(15.0, 50.0, 0.0, 0.0),
+                padding: const EdgeInsets.fromLTRB(15.0, 40.0, 0.0, 0.0),
                 child: Text(
                   '$name2',
                   style: TextStyle(
@@ -98,6 +110,18 @@ class _ScreenSixState extends State<ScreenSix> {
                     color: Colors.white,
                     fontSize: 13.0,
                     fontWeight: FontWeight.w700,
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(15.0, 55.0, 0.0, 0.0),
+                child: Text(
+                  '(coming soon)',
+                  style: TextStyle(
+                    fontFamily: 'Open Sans',
+                    color: Colors.white,
+                    fontSize: 11.0,
+                    //fontWeight: FontWeight.w500,
                   ),
                 ),
               ),
@@ -201,18 +225,30 @@ class _ScreenSixState extends State<ScreenSix> {
                 padding: const EdgeInsets.fromLTRB(120.0, 15.0, 5.0, 0.0),
                 child: Image(
                   width: 20.0,
-                  image: AssetImage('images/twitter.png'),
+                  image: AssetImage('images/spotify.png'),
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.fromLTRB(35.0, 50.0, 0.0, 0.0),
+                padding: const EdgeInsets.fromLTRB(35.0, 40.0, 0.0, 0.0),
                 child: Text(
-                  'Twitter',
+                  'Spotify',
                   style: TextStyle(
                     fontFamily: 'Open Sans',
                     color: Colors.white,
                     fontSize: 13.0,
                     fontWeight: FontWeight.w700,
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(35.0, 55.0, 0.0, 0.0),
+                child: Text(
+                  '(coming soon)',
+                  style: TextStyle(
+                    fontFamily: 'Open Sans',
+                    color: Colors.white,
+                    fontSize: 11.0,
+                    //fontWeight: FontWeight.w500,
                   ),
                 ),
               ),
